@@ -21,7 +21,7 @@ RUN useradd -d "$POLYMER_CLI_HOME" -U -m -s /bin/bash ${user}
 RUN apt-get update && \
     apt-get install -y --no-install-recommends git && \
     apt-get clean && \
-    npm install -g gulp bower polymer-cli generator-polymer-init-custom-build
+    npm install -g gulp bower polymer-cli@next
 
 USER ${user}
 
