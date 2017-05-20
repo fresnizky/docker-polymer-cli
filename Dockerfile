@@ -1,36 +1,28 @@
 ###################################################################################
 # Dockerfile to build a Polymer Dev Environment container images with Polymer-CLI
-# Based on node:4-slim
+# Based on node:6-slim
 #
 # To build, do:
-#   $ docker build -t jefferyb/polymer-cli .
+#   $ docker build -t fresnizky/polymer-cli .
 #
 ###################################################################################
 
-# Set the base image to node:4-slim
-FROM node:4-slim
+# Set the base image to node:6-slim
+FROM node:6-slim
 
-MAINTAINER Jeffery Bagirimvano <jeffery.rukundo@gmail.com>
-
-ENV POLYMER_CLI_HOME /home/polymer
-ARG user=polymer
-ARG group=polymer
-
-RUN useradd -d "$POLYMER_CLI_HOME" -U -m -s /bin/bash ${user}
+MAINTAINER Federico Resnizky <fresnizky@gmail.com>
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends git && \
     apt-get clean && \
-    npm install -g gulp bower polymer-cli@next
-
-USER ${user}
+    npm install -g gulp bower polymer-cli
 
 EXPOSE 8080
 
-RUN mkdir -p /home/${user}/app
+RUN mkdir -p /home/node/app
 
-VOLUME /home/${user}/app
+VOLUME /home/node/app
 
-WORKDIR /home/${user}/app
+WORKDIR /home/node/app
 
-CMD bash
+CMD ["polymer"]
