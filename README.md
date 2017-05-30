@@ -23,7 +23,7 @@ From the [Polymer Project Documentation](https://www.polymer-project.org/2.0/sta
 
 	3. Serve your project
 
-		$ docker run --rm -d -p 8080:8080 -v $(pwd):/home/polymer/app -u node fresnizky/polymer-cli polymer serve -H 0.0.0.0
+		$ docker run --rm -d -p 8080:8080 -v $(pwd):/home/node/app -u node fresnizky/polymer-cli polymer serve -H 0.0.0.0 -p 8080
 
 		and just point your browser to port 8080
 
