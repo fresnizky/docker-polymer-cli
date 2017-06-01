@@ -32,8 +32,8 @@ From the [Polymer Project Documentation](https://www.polymer-project.org/2.0/sta
 Since the `docker run` command is long, and if you're going to be using it often, I would suggest creating/adding an alias for it in your .bash_profile or .bashrc, like:
 
 ```console
-alias polymer="docker run --rm -it -p 8080:8080 -v $(pwd):/home/node/app -u node fresnizky/polymer-cli polymer "
-alias polymer-serve="docker run --rm -d -p 8080:8080 -v $(pwd):/home/node/app -u node fresnizky/polymer-cli polymer serve -H 0.0.0.0 -p 8080"
+alias polymer='docker run --rm -it -v $(pwd):/home/node/app -u node fresnizky/polymer-cli polymer '
+alias polymer-serve='docker run --rm -d -p 8080:8080 -v $(pwd):/home/node/app -u node fresnizky/polymer-cli polymer serve -H 0.0.0.0 -p 8080'
 ```
 
 and then you can just use `polymer` along with the [Polymer CLI commands](https://github.com/Polymer/polymer-cli), like:
